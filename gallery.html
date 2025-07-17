@@ -6,6 +6,70 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Сетка галереи */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+      justify-content: center;
+      margin-top: 2em;
+    }
+    .gallery a {
+      display: block;
+      background: var(--bg-secondary);
+      border-radius: 14px;
+      box-shadow: 0 2px 18px rgba(80,160,200,0.10);
+      overflow: hidden;
+      transition: transform .13s, box-shadow .14s;
+      cursor: pointer;
+      position: relative;
+    }
+    .gallery a:hover {
+      transform: translateY(-8px) scale(1.045);
+      box-shadow: 0 8px 36px rgba(55,150,240,0.13);
+    }
+    .gallery img {
+      display: block;
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: opacity .2s;
+      background: #222;
+    }
+
+    /* Lightbox стили */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9000;
+      left: 0; top: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(20,23,27,0.94);
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+      transition: .15s;
+    }
+    .lightbox.show {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 16px;
+      box-shadow: 0 4px 40px #000c;
+      background: #23262b;
+      transition: transform 0.25s cubic-bezier(.3,1.6,.4,1);
+      transform: scale(1.8);
+    }
+    @media (max-width: 650px) {
+      .gallery img { height: 120px; }
+      .gallery { gap: 12px; }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -13,7 +77,7 @@
       <a href="index.html">Главная</a>
       <a href="about.html">О компании</a>
       <a href="gallery.html" class="active">Галерея</a>
-      <a href="employee1.html">Сотрудники</a>
+      <a href="employee.html">Сотрудники</a>
     </nav>
   </header>
 
@@ -27,19 +91,38 @@
   <div class="container dark">
     <h1>Галерея</h1>
     <div class="gallery">
-      <a href="images/Fig2.jpg" target="_blank">
-        <img src="images/Fig2.jpg" alt="Описание фото 1">
-      </a>
-      <a href="images/Fig3.jpg" target="_blank">
-        <img src="images/Fig3.jpg" alt="Описание фото 2">
-      </a>
-      <a href="images/Fig4.jpg" target="_blank">
-        <img src="images/Fig4.jpg" alt="Описание фото 3">
-      </a>
-      <!-- Добавляйте еще фото по такому же принципу -->
+      <a href="images/Fig2.jpg"><img src="images/Fig2.jpg" alt="Описание фото 1"></a>
+      <a href="images/Fig3.jpg"><img src="images/Fig3.jpg" alt="Описание фото 2"></a>
+      <a href="images/Fig4.jpg"><img src="images/Fig4.jpg" alt="Описание фото 3"></a>
+      <!-- Добавляйте еще фото по тому же принципу -->
+    </div>
+    <div id="lightbox" class="lightbox">
+      <img src="" alt="">
     </div>
   </div>
+
+  <script>
+    document.querySelectorAll('.gallery a').forEach(function(link) {
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        const imgSrc = this.querySelector('img').getAttribute('src');
+        const alt = this.querySelector('img').getAttribute('alt');
+        var lb = document.getElementById('lightbox');
+        lb.classList.add('show');
+        lb.querySelector('img').src = imgSrc;
+        lb.querySelector('img').alt = alt;
+      });
+    });
+    document.getElementById('lightbox').addEventListener('click', function(e){
+      if (e.target === this) {
+        this.classList.remove('show');
+        this.querySelector('img').src = '';
+      }
+    });
+  </script>
 </body>
+</html>
+
 </html>
 
 
