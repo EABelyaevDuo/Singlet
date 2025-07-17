@@ -1,16 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
 :root {
-  --accent: #1caca8;
-  --bg: #f9fafa;
-  --card-bg: #fff;
-  --text-main: #222;
-  --text-muted: #878e96;
-  --border: #e6eaea;
-}
-
-* {
-  box-sizing: border-box;
+  --bg: #171a1f;
+  --bg-secondary: #23262b;
+  --card-bg: #23262b;
+  --accent: #39baff;
+  --accent2: #8f4fff;  /* Можно заменить на фиолетовый или cyan - на выбор */
+  --text-main: #f6f7f8;
+  --text-muted: #7b8690;
+  --border: #27303a;
+  --nav-bg: rgba(25,27,31,0.80);
 }
 
 body {
@@ -21,83 +21,124 @@ body {
   font-size: 18px;
   line-height: 1.65;
 }
-.big-logo {
-  font-family: 'Bebas Neue', 'Montserrat', Arial, sans-serif;
-  font-size: 72px;
-  letter-spacing: 0.15em;
-  color: var(--accent, #1caca8);
-  text-align: center;
-  margin: 42px 0 16px 0;
-  font-weight: 400;
-  text-shadow: 0 2px 14px rgba(36,180,180,0.14);
-}
-@media (max-width: 650px) {
-  .big-logo {
-    font-size: 38px;
-    margin: 28px 0 10px 0;
-  }
-}
 
-
+/* Навигация */
 header {
-  background: var(--card-bg);
-  border-bottom: 1px solid var(--border);
-  padding: 36px 0 12px;
-  text-align: center;
-}
-
-header h1 {
-  margin-bottom: 0.2em;
-  font-size: 2.0em;
-  font-weight: 600;
-  letter-spacing: .06em;
-  color: var(--accent);
+  background: var(--nav-bg);
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
+  top: 0; left: 0;
+  box-shadow: 0 2px 12px rgba(40,64,145,0.04);
 }
 
 nav {
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 24px 0 10px 0;
+  font-size: 1em;
 }
 
 nav a {
   color: var(--text-muted);
   text-decoration: none;
-  margin: 0 18px;
   font-weight: 500;
-  letter-spacing: 0.05em;
-  transition: color .15s;
+  letter-spacing: 0.08em;
   border-bottom: 2px solid transparent;
-  padding-bottom: 2px;
+  padding-bottom: 4px;
+  transition: all .15s;
 }
 nav a:hover, nav a.active {
   color: var(--accent);
   border-bottom: 2px solid var(--accent);
 }
 
+/* HERO AREA */
+.hero {
+  position: relative;
+  height: 340px;
+  background: url('images/bg.jpg') center center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 60px; /* высота шапки */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(120deg, rgba(23,26,31,0.93) 67%, rgba(57,186,255,0.14) 100%);
+  z-index: 1;
+}
+
+.logo-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.big-logo {
+  font-family: 'Bebas Neue', 'Montserrat', Arial, sans-serif;
+  font-size: 70px;
+  letter-spacing: 0.18em;
+  color: var(--accent2);
+  font-weight: 400;
+  text-shadow: 0 4px 32px rgba(39,186,255,0.18), 0 1px 0 #141927;
+  background: transparent;
+  display: inline-block;
+}
+
+@media (max-width: 800px) {
+  .hero { height: 210px; }
+  .big-logo { font-size: 38px; }
+  .logo-container { padding-bottom: 20px; }
+  header nav { gap: 15px; padding: 12px 0 6px 0;}
+}
+
+/* Контент */
 .container {
-  max-width: 720px;
+  max-width: 700px;
   margin: 36px auto;
   background: var(--card-bg);
-  box-shadow: 0 4px 24px rgba(60,160,170,0.08);
+  box-shadow: 0 2px 20px rgba(55,115,168,0.08);
   border-radius: 18px;
-  padding: 2em 1.5em;
+  padding: 2.5em 2em 2em;
+  margin-top: 38px;
+}
+
+.container.dark {
+  background: var(--bg-secondary);
 }
 
 h1, h2, h3 {
   color: var(--accent);
   font-weight: 600;
+  margin-top: 0.7em;
+  margin-bottom: 0.5em;
 }
-h2 { font-size: 1.35em; letter-spacing: 0.04em; margin-bottom: .9em; }
+
+h2 { font-size: 1.25em; letter-spacing: 0.03em; margin-bottom: .7em;}
 
 ul {
   padding-left: 1.2em;
+  color: var(--accent2);
 }
 
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  justify-content: center;
+a {
+  color: var(--accent);
 }
-.gallery img {
-  max-width: 210px;
-  border
+
+p {
+  color: var(--text-main);
+}
+
+::-webkit-scrollbar { width: 8px; background: #171a1f;}
+::-webkit-scrollbar-thumb { background: #23262b; border-radius: 10px;}
+
+@media (max-width: 650px) {
+  .container { padding: 1em .5em; max-width: 98vw; }
+}
