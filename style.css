@@ -299,6 +299,12 @@ p {
   margin: 2em auto 0 auto;
   padding: 0 20px;
 }
+.partner-logo {
+  background: #1b1e22;
+  border-radius: 10px;
+  padding: .5em;
+}
+
 
 
 
