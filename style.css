@@ -194,4 +194,14 @@ p {
   .grid-employees { gap: 14px; }
   .employee-mini-card { width: 98vw; max-width: 340px; }
 }
+.employee-card img.employee-photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 1.1em auto;
+  border: 3px solid var(--accent2);
+}
+
 
