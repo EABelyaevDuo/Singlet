@@ -1,1 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
+:root {
+  --accent: #1caca8;
+  --bg: #f9fafa;
+  --card-bg: #fff;
+  --text-main: #222;
+  --text-muted: #878e96;
+  --border: #e6eaea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+header {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 36px 0 12px;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 0.2em;
+  font-size: 2.0em;
+  font-weight: 600;
+  letter-spacing: .06em;
+  color: var(--accent);
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  margin: 0 18px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: color .15s;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+nav a:hover, nav a.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+.container {
+  max-width: 720px;
+  margin: 36px auto;
+  background: var(--card-bg);
+  box-shadow: 0 4px 24px rgba(60,160,170,0.08);
+  border-radius: 18px;
+  padding: 2em 1.5em;
+}
+
+h1, h2, h3 {
+  color: var(--accent);
+  font-weight: 600;
+}
+h2 { font-size: 1.35em; letter-spacing: 0.04em; margin-bottom: .9em; }
+
+ul {
+  padding-left: 1.2em;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+}
+.gallery img {
+  max-width: 210px;
+  border
