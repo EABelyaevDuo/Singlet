@@ -294,6 +294,11 @@ p {
   text-align: justify;     /* Если нужно по ширине */
   line-height: 1.5;        /* Чуть увеличит межстрочный интервал внутри статьи */
 }
+.partners-grid {
+  max-width: 1200px;
+  margin: 2em auto 0 auto;
+  padding: 0 20px;
+}
 
 
 
