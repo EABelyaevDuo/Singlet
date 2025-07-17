@@ -203,5 +203,20 @@ p {
   margin: 0 auto 1.1em auto;
   border: 3px solid var(--accent2);
 }
+.company-slogan {
+  color: var(--text-muted);
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+  opacity: 0.94;
+  margin-top: 10px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(25,60,110,0.08);
+}
+@media (max-width:800px) {
+  .company-slogan { font-size: 1em; }
+}
+
 
 
