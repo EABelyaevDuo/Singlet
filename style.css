@@ -290,7 +290,7 @@ p {
   }
 }
 .pub-list li {
-  margin-bottom: 1.4em;    /* Можно 1.2em, 2em, 20px — подбери по вкусу */
+  margin-bottom: 2em;    /* Можно 1.2em, 2em, 20px — подбери по вкусу */
   text-align: justify;     /* Если нужно по ширине */
   line-height: 1.5;        /* Чуть увеличит межстрочный интервал внутри статьи */
 }
