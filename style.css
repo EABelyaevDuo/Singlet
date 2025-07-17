@@ -21,6 +21,23 @@ body {
   font-size: 18px;
   line-height: 1.65;
 }
+.big-logo {
+  font-family: 'Bebas Neue', 'Montserrat', Arial, sans-serif;
+  font-size: 72px;
+  letter-spacing: 0.15em;
+  color: var(--accent, #1caca8);
+  text-align: center;
+  margin: 42px 0 16px 0;
+  font-weight: 400;
+  text-shadow: 0 2px 14px rgba(36,180,180,0.14);
+}
+@media (max-width: 650px) {
+  .big-logo {
+    font-size: 38px;
+    margin: 28px 0 10px 0;
+  }
+}
+
 
 header {
   background: var(--card-bg);
