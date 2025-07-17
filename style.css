@@ -241,6 +241,54 @@ p {
   background: #6d23e6; /* темная версия accent2 */
   box-shadow: 0 4px 20px 0 #0003;
 }
+.lightbox .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(25, 25, 35, 0.42);
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  box-shadow: 0 2px 15px #0004;
+  transition: background 0.18s, box-shadow 0.15s, transform 0.07s;
+  outline: none;
+  opacity: 0.93;
+  border: 1.5px solid rgba(120,120,170,0.18);
+}
+.lightbox .arrow svg {
+  display: block;
+  filter: drop-shadow(0 1px 6px #2228);
+}
+.lightbox .arrow.left { left: -65px; }
+.lightbox .arrow.right { right: -65px; }
+
+.lightbox .arrow:hover,
+.lightbox .arrow:focus {
+  background: rgba(100, 80, 200, 0.78);
+  box-shadow: 0 4px 24px #8f4fff60;
+  transform: scale(1.13) translateY(-50%);
+}
+@media (max-width: 900px) {
+  .lightbox .arrow.left { left: 5px; }
+  .lightbox .arrow.right { right: 5px; }
+}
+@media (max-width: 650px) {
+  .lightbox .arrow {
+    width: 39px;
+    height: 39px;
+    font-size: 1.6rem;
+  }
+  .lightbox .arrow svg {
+    width: 23px;
+    height: 23px;
+  }
+}
 
 
 
