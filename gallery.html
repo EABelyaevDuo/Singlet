@@ -139,11 +139,19 @@
       <!-- Добавляй ещё фото по такому же принципу -->
     </div>
     <div id="lightbox" class="lightbox">
-      <div class="lightbox-contents">
-        <button class="arrow left" title="Назад">&#8592;</button>
-        <img src="" alt="">
-        <button class="arrow right" title="Вперёд">&#8594;</button>
-      </div>
+     <div class="lightbox-contents">
+  <button class="arrow left" title="Назад" aria-label="Предыдущее фото">
+    <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+      <path d="M20 8l-8 8 8 8" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <img src="" alt="">
+  <button class="arrow right" title="Вперёд" aria-label="Следующее фото">
+    <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+      <path d="M12 24l8-8-8-8" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+</div>
     </div>
   </div>
   <script>
