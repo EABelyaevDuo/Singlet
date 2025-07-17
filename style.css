@@ -142,3 +142,56 @@ p {
 @media (max-width: 650px) {
   .container { padding: 1em .5em; max-width: 98vw; }
 }
+.grid-employees {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin-top: 2em;
+}
+.employee-mini-card {
+  background: var(--bg-secondary);
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(40,160,200,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 185px;
+  text-align: center;
+  padding: 1.5em .5em 1em .5em;
+  color: var(--text-main);
+  text-decoration: none;
+  transition: transform .16s, box-shadow .18s;
+  position: relative;
+}
+.employee-mini-card:hover {
+  transform: translateY(-8px) scale(1.035);
+  box-shadow: 0 8px 36px rgba(32,180,240,0.14);
+  color: var(--accent);
+}
+.employee-mini-card img {
+  width: 82px;
+  height: 82px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1em;
+  border: 3px solid var(--accent2);
+  background: var(--bg);
+}
+.emp-name {
+  font-size: 1.15em;
+  font-weight: 600;
+  margin-bottom: .4em;
+  color: var(--accent);
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+.emp-position {
+  font-size: .98em;
+  color: var(--text-muted);
+  margin-bottom: .2em;
+}
+@media (max-width:600px) {
+  .grid-employees { gap: 14px; }
+  .employee-mini-card { width: 98vw; max-width: 340px; }
+}
+
