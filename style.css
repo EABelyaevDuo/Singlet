@@ -170,8 +170,8 @@ p {
   color: var(--accent);
 }
 .employee-mini-card img {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 1em;
