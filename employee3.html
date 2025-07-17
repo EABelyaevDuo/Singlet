@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Томс Анастасия | Singlet</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Стили должны быть уже подключены! -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
@@ -13,7 +14,7 @@
       <a href="index.html">Главная</a>
       <a href="about.html">О компании</a>
       <a href="gallery.html">Галерея</a>
-      <a href="employee1.html" class="active">Сотрудники</a>
+      <a href="employee.html" class="active">Сотрудники</a>
     </nav>
   </header>
 
@@ -25,20 +26,20 @@
   </section>
 
   <div class="container dark" style="max-width:400px;">
+    <div style="margin-bottom:1em;">
+      <a href="employee.html" style="color:var(--accent2);font-size:.98em;">← Назад к сотрудникам</a>
+    </div>
     <div class="employee-card">
-      <!-- Без фото пока: -->
-      <div style="width:140px;height:140px;background:var(--bg-secondary);border-radius:50%;margin:0 auto 1.1em auto;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:1.1em;">
-        Фото
-      </div>
+      <!-- ФОТО сотрудника ↓↓↓ имена файлов подставь свои -->
+      <img class="employee-photo" src="images/evgeniy.jpg" alt="Беляев Евгений Семенович">
       <h2>Томс Анастасия Сергеевна</h2>
-      <h3>Провизор, аспирант</h3>
-      <p>Аспирант и научный сотрудник Института физической химии и электрохимии им А.Н. Фрумкина, РАН
+      <h3>Научный сотрудник</h3>
+      <p>
+        Аспирант и научный сотрудник Института физической химии и электрохимии им А.Н. Фрумкина, РАН
         Выпускник Российского университета дружбы народов (РУДН) по специальности 33.05.01 фармация. Присвоена квалификация провизор. Имеется аккредитация (уникальный номер реестровой записи 2023.4611008),
         вид деятельности: фармацевтическая деятельность, специальность "Фармация", наименование профессионального стандарта "Провизор".
-        Автор 2 научных публикаций и участник 5 научных международных конференций по тематике исследования </p>
-    </div>
-    <div style="text-align:center;margin:1.2em 0 0 0;">
-      <a href="employee2.html">→ Следующий сотрудник</a>
+        Автор 2 научных публикаций и участник 5 научных международных конференций по тематике исследования
+      </p>
     </div>
   </div>
 </body>
