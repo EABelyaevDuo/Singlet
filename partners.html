@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Наши партнёры | Singlet</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .partners-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin-top: 2em;
+    }
+    .partner-card {
+      background: var(--bg-secondary);
+      border-radius: 14px;
+      box-shadow: 0 2px 16px rgba(80,160,200,0.12);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 220px;
+      padding: 1.5em 1em 1em 1em;
+      text-align: center;
+      transition: box-shadow .13s, transform .12s;
+    }
+    .partner-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 36px rgba(32,180,240,0.16);
+    }
+    .partner-logo {
+      max-width: 120px;
+      max-height: 60px;
+      object-fit: contain;
+      margin-bottom: 1em;
+      background: #1b1e22;
+      border-radius: 10px;
+      padding: .5em;
+    }
+    .partner-title {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 1.06em;
+      margin-bottom: .4em;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .partner-desc {
+      color: var(--text-muted);
+      font-size: .97em;
+      min-height: 40px;
+    }
+    @media (max-width:650px) {
+      .partner-card { width: 96vw; max-width: 320px; }
+      .partners-grid { gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="about.html">О компании</a>
+      <a href="gallery.html">Галерея</a>
+      <a href="employee.html">Сотрудники</a>
+      <a href="partners.html" class="active">Наши партнёры</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="logo-container">
+      <span class="big-logo">SINGLET</span>
+    </div>
+  </section>
+
+  <div class="container dark">
+    <h1>Наши партнёры</h1>
+    <div class="partners-grid">
+      <!-- Пример карточки партнёра -->
+      <div class="partner-card">
+        <img src="images/logo1.png" alt="Название партнёра 1" class="partner-logo">
+        <div class="partner-title">Партнёр 1</div>
+        <div class="partner-desc">Краткое описание компании или учреждения — чем занимается, как сотрудничает с вами.</div>
+      </div>
+      <div class="partner-card">
+        <img src="images/logo2.png" alt="Название партнёра 2" class="partner-logo">
+        <div class="partner-title">Партнёр 2</div>
+        <div class="partner-desc">Описание второго партнёра. Можно добавить ссылку: <a href="https://partner2.ru" target="_blank">Сайт</a></div>
+      </div>
+      <!-- Добавляй новые карточки по аналогии! -->
+    </div>
+  </div>
+</body>
+</html>
 
