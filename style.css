@@ -217,6 +217,31 @@ p {
 @media (max-width:800px) {
   .company-slogan { font-size: 1em; }
 }
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--accent2, #8f4fff);
+  color: #fff;
+  padding: 0.5em 1.2em;
+  border: none;
+  border-radius: 30px;
+  font-size: 1em;
+  font-weight: 600;
+  box-shadow: 0 2px 10px 0 #0002;
+  cursor: pointer;
+  transition: background 0.18s, box-shadow 0.15s;
+  outline: none;
+  margin-bottom: 1em;
+}
+.back-btn svg {
+  margin-right: 6px;
+}
+.back-btn:hover, .back-btn:focus {
+  background: #6d23e6; /* темная версия accent2 */
+  box-shadow: 0 4px 20px 0 #0003;
+}
+
 
 
 
