@@ -300,14 +300,15 @@ p {
   padding: 0 20px;
 }
 .partner-logo {
-  max-width: 120px;
-  max-height: 60px;
+  width: 130px;
+  height: 60px;
   object-fit: contain;
+  display: block;
   margin-bottom: 1em;
-  background: transparent; /* фон исчезнет */
-  border-radius: 0;        /* уберёт скругления краёв */
-  padding: 0;              /* убрать внутренний отступ */
-  box-shadow: none;        /* на всякий случай */
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 
