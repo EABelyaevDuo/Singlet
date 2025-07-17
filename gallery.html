@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Сетка галереи */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -38,8 +37,6 @@
       transition: opacity .2s;
       background: #222;
     }
-
-    /* Lightbox стили */
     .lightbox {
       display: none;
       position: fixed;
@@ -56,6 +53,14 @@
     .lightbox.show {
       display: flex;
     }
+    .lightbox-contents {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
     .lightbox img {
       max-width: 90vw;
       max-height: 90vh;
@@ -64,10 +69,45 @@
       background: #23262b;
       transition: transform 0.25s cubic-bezier(.3,1.6,.4,1);
       transform: scale(1.8);
+      display: block;
+      margin: 0;
+    }
+    .lightbox .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.6rem;
+      color: #fff;
+      background: rgba(25, 25, 35, 0.42);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 3;
+      transition: background 0.2s;
+      user-select: none;
+    }
+    .lightbox .arrow:hover {
+      background: rgba(60, 60, 130, 0.72);
+    }
+    .lightbox .arrow.left {
+      left: -65px;
+    }
+    .lightbox .arrow.right {
+      right: -65px;
+    }
+    @media (max-width: 900px) {
+      .lightbox .arrow.left { left: 5px; }
+      .lightbox .arrow.right { right: 5px; }
     }
     @media (max-width: 650px) {
       .gallery img { height: 120px; }
       .gallery { gap: 12px; }
+      .lightbox .arrow { font-size: 1.6rem; width: 38px; height: 38px; }
     }
   </style>
 </head>
@@ -94,35 +134,73 @@
       <a href="images/Fig2.jpg"><img src="images/Fig2.jpg" alt="Описание фото 1"></a>
       <a href="images/Fig3.jpg"><img src="images/Fig3.jpg" alt="Описание фото 2"></a>
       <a href="images/Fig4.jpg"><img src="images/Fig4.jpg" alt="Описание фото 3"></a>
-      <!-- Добавляйте еще фото по тому же принципу -->
+      <!-- Добавляй ещё фото по такому же принципу -->
     </div>
     <div id="lightbox" class="lightbox">
-      <img src="" alt="">
+      <div class="lightbox-contents">
+        <button class="arrow left" title="Назад">&#8592;</button>
+        <img src="" alt="">
+        <button class="arrow right" title="Вперёд">&#8594;</button>
+      </div>
     </div>
   </div>
-
   <script>
-    document.querySelectorAll('.gallery a').forEach(function(link) {
+    const galleryLinks = Array.from(document.querySelectorAll('.gallery a'));
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = lightbox.querySelector('img');
+    let currentIndex = 0;
+
+    function showLightbox(index) {
+      currentIndex = index;
+      const img = galleryLinks[index].querySelector('img');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lightbox.classList.add('show');
+    }
+
+    galleryLinks.forEach((link, idx) => {
       link.addEventListener('click', function(e){
         e.preventDefault();
-        const imgSrc = this.querySelector('img').getAttribute('src');
-        const alt = this.querySelector('img').getAttribute('alt');
-        var lb = document.getElementById('lightbox');
-        lb.classList.add('show');
-        lb.querySelector('img').src = imgSrc;
-        lb.querySelector('img').alt = alt;
+        showLightbox(idx);
       });
     });
-    document.getElementById('lightbox').addEventListener('click', function(e){
-      if (e.target === this) {
-        this.classList.remove('show');
-        this.querySelector('img').src = '';
+
+    function navigateLightbox(step) {
+      let newIndex = currentIndex + step;
+      if (newIndex < 0) newIndex = galleryLinks.length - 1;
+      if (newIndex >= galleryLinks.length) newIndex = 0;
+      showLightbox(newIndex);
+    }
+
+    lightbox.querySelector('.arrow.left').addEventListener('click', function(e){
+      e.stopPropagation();
+      navigateLightbox(-1);
+    });
+    lightbox.querySelector('.arrow.right').addEventListener('click', function(e){
+      e.stopPropagation();
+      navigateLightbox(1);
+    });
+    // Закрывать по клику вне картинки
+    lightbox.addEventListener('click', function(e){
+      if (e.target === lightbox) {
+        lightbox.classList.remove('show');
+        lbImg.src = '';
+      }
+    });
+    // Листать с клавиатуры
+    window.addEventListener('keydown', function(e){
+      if (!lightbox.classList.contains('show')) return;
+      if (e.key === 'Escape') {
+        lightbox.classList.remove('show');
+        lbImg.src = '';
+      }
+      if (e.key === 'ArrowLeft') {
+        navigateLightbox(-1);
+      }
+      if (e.key === 'ArrowRight') {
+        navigateLightbox(1);
       }
     });
   </script>
 </body>
 </html>
-
-</html>
-
-
