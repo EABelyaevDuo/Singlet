@@ -101,7 +101,8 @@ nav a:hover, nav a.active {
 
 /* Контент */
 .container {
-  max-width: 700px;
+  max-width: 95vw;     /* 95% ширины окна */
+  /* Либо можно: max-width: 1200px; если хочешь лимит на ОЧЕНЬ широких экранах */
   margin: 36px auto;
   background: var(--card-bg);
   box-shadow: 0 2px 20px rgba(55,115,168,0.08);
