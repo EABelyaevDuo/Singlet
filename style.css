@@ -307,8 +307,9 @@ p {
   margin-bottom: 1em;
   background: transparent;
   padding: 0;
-  border-radius: 0;
+  border-radius: 12px;      /* факультативно */
   box-shadow: none;
+  border: 2px solid #fff;   /* выделяет лого на тёмном фоне */
 }
 
 
