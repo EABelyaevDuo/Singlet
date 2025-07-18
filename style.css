@@ -302,15 +302,16 @@ p {
 .partner-logo {
   width: 100px;
   height: 100px;
-  object-fit: contain;          /* Чтобы лого не искажалось */
+  object-fit: contain;
   display: block;
   margin-bottom: 1em;
-  background: #fff;             /* БЕЛЫЙ ФОН! */
-  padding: 8px;                 /* Внутренний отступ — регулируй по ситуации */
-  border: 2px solid #fff;       /* Белая рамка */
-  border-radius: 12px;          /* Скругление рамки — по желанию */
-  box-shadow: 0 2px 12px rgba(30,40,80,0.07); /* лёгкая тень, аккуратно */
+  background: #fff !important;
+  padding: 8px;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(30,40,80,0.07);
 }
+
 
 
 
