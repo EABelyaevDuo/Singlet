@@ -300,8 +300,8 @@ p {
   padding: 0 20px;
 }
 .partner-logo {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   display: block;
   margin-bottom: 1em;
