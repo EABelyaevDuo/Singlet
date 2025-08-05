@@ -58,7 +58,7 @@ nav a:hover, nav a.active {
 .hero {
   position: relative;
   height: 340px;
-  background: url('images/bg4.jpg') center center/cover no-repeat;
+  background: url('images/bg2.jpg') center center/cover no-repeat;
   display: flex;
   align-items: flex-end;
   justify-content: center;
