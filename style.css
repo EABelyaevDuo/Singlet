@@ -62,7 +62,7 @@ nav a:hover, nav a.active {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  margin-top: 60px; /* высота шапки */
+  margin-top: 80px; /* высота шапки */
 }
 
 .hero-overlay {
