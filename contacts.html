@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Контакты | SINGLET</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .contact-container {
+      max-width: 80vw;
+      margin: 2em auto;
+      padding: 2em 2.5em;
+      background: var(--bg-secondary);
+      border-radius: 18px;
+      box-shadow: 0 2px 20px rgba(55,115,168,0.08);
+      color: var(--text-main);
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    h1 {
+      font-weight: 600;
+      font-size: 2em;
+      color: var(--accent2);
+      margin-bottom: 1em;
+    }
+    .contact-item {
+      margin-bottom: 1.5em;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+    .contact-item strong {
+      display: inline-block;
+      width: 140px;
+      color: var(--accent);
+    }
+    a {
+      color: var(--accent2);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    form {
+      margin-top: 2em;
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+    }
+    label {
+      font-weight: 600;
+      margin-bottom: 0.3em;
+    }
+    input, textarea {
+      margin-bottom: 1.2em;
+      padding: 10px;
+      border-radius: 12px;
+      border: none;
+      font-size: 1em;
+      background: var(--bg);
+      color: var(--text-main);
+      resize: vertical;
+    }
+    button {
+      background: var(--accent2);
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      font-size: 1em;
+      padding: 0.6em 1.2em;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.18s;
+    }
+    button:hover {
+      background: #6d23e6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="about.html">О компании</a>
+      <a href="gallery.html">Галерея</a>
+      <a href="employee.html">Сотрудники</a>
+      <a href="partners.html">Наши партнеры</a>
+      <a href="services.html">Услуги</a>
+      <a href="contacts.html" class="active">Контакты</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="logo-container">
+      <span class="big-logo">SINGLET</span>
+    </div>
+  </section>
+
+  <div class="contact-container">
+    <h1>Свяжитесь с нами</h1>
+
+    <div class="contact-item">
+      <strong>Адрес:</strong> г. Москва, ул. Науки, д. 10
+    </div>
+
+    <div class="contact-item">
+      <strong>Телефон:</strong> <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+    </div>
+
+    <div class="contact-item">
+      <strong>Email:</strong> <a href="mailto:info@singlet.ru">info@singlet.ru</a>
+    </div>
+
+    <div class="contact-item">
+      <strong>Часы работы:</strong> Пн-Пт 9:00 – 18:00
+    </div>
+
+    <!-- Пример простой формы (без бэкенда) -->
+    <form method="post" action="#">
+      <label for="name">Ваше имя</label>
+      <input type="text" id="name" name="name" required placeholder="Введите имя">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required placeholder="Введите email">
+
+      <label for="message">Сообщение</label>
+      <textarea id="message" name="message" rows="5" required placeholder="Текст сообщения"></textarea>
+
+      <button type="submit">Отправить</button>
+    </form>
+  </div>
+</body>
+</html>
