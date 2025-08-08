@@ -47,11 +47,23 @@ nav a {
   letter-spacing: 0.08em;
   border-bottom: 2px solid transparent;
   padding-bottom: 4px;
-  transition: all .15s;
+  transition: color 0.15s, border-bottom 0.15s;
 }
-nav a:hover, nav a.active {
+
+nav a:hover {
   color: var(--accent);
   border-bottom: 2px solid var(--accent);
+}
+
+nav a.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+/* Главное — при наведении на активную вкладку бордер не меняется */
+nav a.active:hover {
+  border-bottom: 2px solid var(--accent);
+  color: var(--accent);
 }
 
 /* HERO AREA */
